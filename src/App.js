@@ -1,10 +1,10 @@
 import "./App.css";
-import About from "./components/About";
+//import About from "./components/About";
 import Navbar from "./components/Navbar";
 import React, { useState } from "react";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+//import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -35,14 +35,14 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Navbar title="BigFoot" mode={mode} toggle={toggleMode} />
-        <Alert alert={alert} />
-        <div className="container my-3">
-          {/*/user
+      {/*<Router>*/}
+      <Navbar title="BigFoot" mode={mode} toggle={toggleMode} />
+      <Alert alert={alert} />
+      <div className="container my-3">
+        {/*/user
 		  /user/about
 		  will render same i.e /user if exact path is not used*/}
-          <Switch>
+        {/*<Switch>
             <Route exact path="/about">
               <About />
             </Route>
@@ -53,9 +53,10 @@ function App() {
                 mode={mode}
               />
             </Route>
-          </Switch>
-        </div>
-      </Router>
+          </Switch>*/}
+        <TextForm showAlert={showAlert} heading="Enter the Text" mode={mode} />
+      </div>
+      {/*</Router>*/}
     </>
   );
 }
