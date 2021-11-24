@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 const themeColor = {
   dark: {
@@ -51,13 +51,13 @@ export default function Navbar(props) {
       }}
     >
       <div className="container-fluid">
-        <Link
+        <a
           className="navbar-brand"
-          to="/"
+          href="#"
           style={{ color: themeColor[preferredMode || props.mode].color }}
         >
           {props.title}
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -72,24 +72,24 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link active"
                 aria-current="page"
-                to="/"
+                href="#"
                 style={{ color: themeColor[preferredMode || props.mode].color }}
               >
                 Home
-              </Link>
+              </a>
             </li>
-            <li className="nav-item">
-              <Link
+            {/*<li className="nav-item">
+              <a
                 className="nav-link"
-                to="/about"
+                href="#"
                 style={{ color: themeColor[preferredMode || props.mode].color }}
               >
                 {props.aboutText}
-              </Link>
-            </li>
+              </a>
+            </li>*/}
           </ul>
           {/*<form className="d-flex">
             <input
