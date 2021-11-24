@@ -33,10 +33,15 @@ export default function TextForm(props) {
       }
 
       for (let j = 1; j < wordArray[i].length; j++) {
-        newText += wordArray[i][j];
+        let arrayCode = wordArray[i].charCodeAt(j);
+        if (arrayCode >= 65 && arrayCode <= 90) {
+          newText += String.fromCharCode(arrayCode + 32);
+        } else {
+          newText += wordArray[i][j];
+        }
       }
 
-      if (i != wordArray.length - 1) {
+      if (i !== wordArray.length - 1) {
         newText += " ";
       }
     }
@@ -53,7 +58,7 @@ export default function TextForm(props) {
       for (let j = 0; j < wordArray[i].length; j++) {
         let code = wordArray[i].charCodeAt(j);
 
-        if (j % 2 == 0) {
+        if (j % 2 === 0) {
           if (code >= 65 && code <= 90) {
             newText += String.fromCharCode(code + 32);
           } else newText += wordArray[i][j];
@@ -64,7 +69,7 @@ export default function TextForm(props) {
         }
       }
 
-      if (i != wordArray.length - 1) {
+      if (i !== wordArray.length - 1) {
         newText += " ";
       }
     }
@@ -87,7 +92,7 @@ export default function TextForm(props) {
         } else newText += wordArray[i][j];
       }
 
-      if (i != wordArray.length - 1) {
+      if (i !== wordArray.length - 1) {
         newText += " ";
       }
     }
@@ -97,8 +102,8 @@ export default function TextForm(props) {
   };
 
   let totalWords = text.split(" ").length;
-  if (text.length == 0) totalWords = 0;
-  else if (text[text.length - 1] == " ") {
+  if (text.length === 0) totalWords = 0;
+  else if (text[text.length - 1] === " ") {
     totalWords--;
   }
 
@@ -147,7 +152,10 @@ export default function TextForm(props) {
         <p>
           {totalWords} words and {text.length} letters
         </p>
-        <p>{0.008 * totalWords} Minutes read</p>
+        <p>
+          {Math.floor(totalWords / 125)} Minutes{" "}
+          {Math.floor(((totalWords % 125) * 60) / 125)} sec read
+        </p>
         <h3>Preview</h3>
         <p>
           {text.length > 0
