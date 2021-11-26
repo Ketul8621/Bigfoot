@@ -12,11 +12,11 @@ const themeColor = {
     color: "black",
   },
   teal: {
-    bgColor: "#ffa781",
+    bgColor: "#993441",
     color: "black",
   },
   orange: {
-    bgColor: "#ffe042",
+    bgColor: "#fb3433",
     color: "white",
   },
   blue: {
@@ -28,12 +28,11 @@ const themeColor = {
 export default function Navbar(props) {
   const [preferredMode, setPreferredMode] = useState("");
   function handleChange(colorProp) {
-    console.log(colorProp);
     setPreferredMode(colorProp);
     if (colorProp === "teal") {
-      document.body.style.backgroundColor = "#993441";
+      document.body.style.backgroundColor = "#ffa781";
     } else if (colorProp === "orange") {
-      document.body.style.backgroundColor = "orangered";
+      document.body.style.backgroundColor = "#e9bbba";
     } else if (colorProp === "blue") {
       document.body.style.backgroundColor = "#00e1d9";
     }

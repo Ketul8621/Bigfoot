@@ -38,21 +38,26 @@
 }
 
 .pallette-color {
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	border: none;
-	margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  margin-right: 10px;
 }
 
 .teal {
-	background-color: #993441;
+  /*background-color: #993441;*/
+  background-color: #ffa781;
 }
 
 .orange {
-	background-color: orangered;
+  background-color: #e9bbba;
 }
 
 .blue {
-	background-color: #00e1d9;
+  background-color: #00e1d9;
+}
+
+.navbar-toggler {
+  background-color: grey;
 }

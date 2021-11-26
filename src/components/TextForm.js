@@ -122,24 +122,44 @@ export default function TextForm(props) {
             onChange={handleChange}
             rows="8"
             style={{
-              backgroundColor: props.mode === "light" ? "white" : "grey",
+              backgroundColor: props.mode === "light" ? "white" : "#64af9e",
               color: props.mode === "light" ? "black" : "white",
             }}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleUpClick}
+        >
           UPPERCASE
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleLoClick}
+        >
           lowercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleCapClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleCapClick}
+        >
           Capitalised Case
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleAltClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleAltClick}
+        >
           aLtErNaTiNg cAsE
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleInvClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleInvClick}
+        >
           Inverse Case
         </button>
       </div>
@@ -150,11 +170,29 @@ export default function TextForm(props) {
       >
         <h2>Your Text Summary</h2>
         <p>
-          {totalWords} words and {text.length} letters
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words and {text.length} letters
         </p>
         <p>
-          {Math.floor(totalWords / 125)} Minutes{" "}
-          {Math.floor(((totalWords % 125) * 60) / 125)} sec read
+          {Math.floor(
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length / 125
+          )}{" "}
+          Minutes{" "}
+          {Math.floor(
+            ((text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length %
+              125) *
+              60) /
+              125
+          )}{" "}
+          sec read
         </p>
         <h3>Preview</h3>
         <p>

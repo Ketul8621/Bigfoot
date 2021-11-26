@@ -18,7 +18,7 @@ function App() {
 
     setTimeout(() => {
       setAlert(null);
-    }, 0);
+    }, 1500);
   };
   const toggleMode = () => {
     //  console.log(asdf);
